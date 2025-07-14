@@ -46,6 +46,12 @@ h2 {
 p {
   font-family: "Inter", sans-serif;
 }
+.copyright {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: 2rem;
+}
 /* Shared animation for revealing content on scroll */
 .fade-in {
   opacity: 0;
