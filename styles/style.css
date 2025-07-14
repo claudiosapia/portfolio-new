@@ -1,0 +1,614 @@
+/* ==========================================================================
+   Enhanced Portfolio Page Styles - Modern & Interactive
+   ========================================================================== */
+
+/* --- Enhanced Layout & Background --- */
+.portfolio-page .div-one-portfolio {
+  background: linear-gradient(
+      135deg,
+      rgba(99, 102, 241, 0.1) 0%,
+      rgba(139, 92, 246, 0.15) 50%,
+      rgba(59, 130, 246, 0.1) 100%
+    ),
+    radial-gradient(
+      circle at 25% 25%,
+      rgba(99, 102, 241, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(139, 92, 246, 0.1) 0%,
+      transparent 50%
+    ),
+    url(../pics/beatenberg-2063366_1280.webp) fixed;
+  background-size: cover, 800px 800px, 600px 600px, cover;
+  background-position: center, top left, bottom right, center;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+  position: relative;
+}
+
+.portfolio-page .div-one-portfolio::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.02) 50%,
+      transparent 70%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 30%,
+      rgba(99, 102, 241, 0.03) 50%,
+      transparent 70%
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --- Enhanced Header & Title --- */
+.portfolio-page #proj {
+  color: #1e293b;
+  font-family: "Lemon Milk", sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(99, 102, 241, 0.1);
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background: linear-gradient(135deg, #1e293b 0%, #6366f1 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titlePulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes titlePulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.02);
+  }
+}
+
+.portfolio-page #proj::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-radius: 2px;
+  animation: underlineExpand 2s ease-in-out infinite alternate;
+}
+
+@keyframes underlineExpand {
+  0% {
+    width: 100px;
+  }
+  100% {
+    width: 150px;
+  }
+}
+
+/* --- Enhanced Card Styles --- */
+.portfolio-page .card {
+  border: none;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(99, 102, 241, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.portfolio-page .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.portfolio-page .card:hover::before {
+  left: 100%;
+}
+
+.portfolio-page .card:hover {
+  transform: translateY(-12px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15),
+    0 8px 16px rgba(99, 102, 241, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.portfolio-page .card:nth-child(odd):hover {
+  transform: translateY(-12px) rotateX(5deg) rotateY(-5deg);
+}
+
+/* --- Enhanced Image Container --- */
+.portfolio-page .card-img-overlay-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px 24px 0 0;
+}
+
+.portfolio-page .card-img-top {
+  height: 240px;
+  object-fit: cover;
+  border-radius: 24px 24px 0 0;
+  transition: all 0.4s ease;
+  filter: brightness(1) contrast(1.1);
+}
+
+.portfolio-page .card:hover .card-img-top {
+  transform: scale(1.08);
+  filter: brightness(1.1) contrast(1.2);
+}
+
+/* --- Enhanced Tech Overlay --- */
+.portfolio-page .card-tech-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.95) 0%,
+    rgba(139, 92, 246, 0.95) 100%
+  );
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 2rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+
+.portfolio-page .card:hover .card-tech-overlay {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.portfolio-page .card-tech-overlay span {
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  animation: techGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes techGlow {
+  0% {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.portfolio-page .card-tech-overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.portfolio-page .card-tech-overlay li {
+  display: inline-block;
+  margin: 0.3rem 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  font-size: 0.9em;
+  font-weight: 500;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.portfolio-page .card-tech-overlay li:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* --- Enhanced Card Content --- */
+.portfolio-page .card-body {
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio-page .card-title {
+  font-family: "Lemon Milk", sans-serif;
+  font-size: 1.4rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #1e293b 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.portfolio-page .card:hover .card-title {
+  transform: translateY(-2px);
+}
+
+.portfolio-page .card-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.portfolio-page .card:hover .card-text {
+  color: #475569;
+}
+
+/* --- Enhanced Buttons --- */
+.portfolio-page .btn {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+}
+
+.portfolio-page .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+  z-index: 1;
+}
+
+.portfolio-page .btn:hover::before {
+  left: 100%;
+}
+
+.portfolio-page .btn-outline-primary {
+  border: 2px solid #6366f1;
+  color: #6366f1;
+  background: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.portfolio-page .btn-outline-primary:hover {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border-color: #6366f1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3);
+}
+
+.portfolio-page .btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: 2px solid #6366f1;
+  color: white;
+}
+
+.portfolio-page .btn-primary:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  border-color: #8b5cf6;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(139, 92, 246, 0.3);
+}
+
+/* --- Enhanced Modal Styles --- */
+.portfolio-page .modal {
+  z-index: 1060;
+  backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.portfolio-page .modal-content {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(248, 250, 252, 0.95) 100%
+  );
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(99, 102, 241, 0.1);
+  animation: modalSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-50px) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* --- Enhanced Carousel Controls --- */
+.portfolio-page .carousel-control-prev,
+.portfolio-page .carousel-control-next {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #1e293b 0%, #6366f1 100%);
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0.9;
+  backdrop-filter: blur(10px);
+}
+
+.portfolio-page .carousel-control-prev:hover,
+.portfolio-page .carousel-control-next:hover {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
+  opacity: 1;
+}
+
+.portfolio-page .carousel-control-prev-icon,
+.portfolio-page .carousel-control-next-icon {
+  width: 24px;
+  height: 24px;
+  background: none;
+  font-size: 24px;
+  color: white;
+  filter: none;
+}
+
+.portfolio-page .carousel-control-prev-icon::before {
+  content: "‹";
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.portfolio-page .carousel-control-next-icon::before {
+  content: "›";
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* --- Enhanced Close Button --- */
+.portfolio-page .modal .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 10;
+  opacity: 0.9;
+  backdrop-filter: blur(10px);
+}
+
+.portfolio-page .modal .close:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  opacity: 1;
+}
+
+/* --- Enhanced Previous Projects Section --- */
+.portfolio-page .previous-projects-section {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(248, 250, 252, 0.9) 100%
+  );
+  backdrop-filter: blur(20px);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(99, 102, 241, 0.1);
+  padding: 4rem 2rem;
+  margin-top: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-page .previous-projects-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.05) 0%,
+    transparent 70%
+  );
+  animation: sectionRotate 20s linear infinite;
+  z-index: 1;
+}
+
+@keyframes sectionRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.portfolio-page .previous-projects-section h2 {
+  color: #1e293b;
+  font-family: "Lemon Milk", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(135deg, #1e293b 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.portfolio-page .previous-projects-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Enhanced Grid Layout --- */
+.portfolio-page .row {
+  margin-bottom: 2rem;
+}
+
+.portfolio-page .col-lg-4,
+.portfolio-page .col-md-6 {
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.portfolio-page .col-lg-4 .card,
+.portfolio-page .col-md-6 .card {
+  width: 100%;
+}
+
+/* --- Enhanced Responsive Design --- */
+@media (max-width: 1200px) {
+  .portfolio-page .card {
+    border-radius: 20px;
+  }
+
+  .portfolio-page .card-img-top {
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-page #proj {
+    font-size: 2.5rem;
+    margin-top: 4rem;
+  }
+
+  .portfolio-page .card {
+    border-radius: 18px;
+    margin-bottom: 2rem;
+  }
+
+  .portfolio-page .card-img-top {
+    height: 180px;
+  }
+
+  .portfolio-page .card-body {
+    padding: 1.5rem;
+  }
+
+  .portfolio-page .previous-projects-section {
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .portfolio-page .card:hover {
+    transform: translateY(-8px);
+  }
+
+  .portfolio-page .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* --- Enhanced Loading Animation --- */
+.portfolio-page .loader-section {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+.portfolio-page .loader {
+  animation: rotate 1.5s linear infinite;
+}
+
+.portfolio-page .circle {
+  background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+  animation: grow 1.2s ease-in-out infinite;
+}
+
+/* --- Enhanced Accessibility --- */
+.portfolio-page .card:focus-within {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+.portfolio-page .btn:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* --- Enhanced Performance Optimizations --- */
+.portfolio-page .card {
+  will-change: transform;
+}
+
+.portfolio-page .card-img-top {
+  will-change: transform, filter;
+}
+
+.portfolio-page .card-tech-overlay {
+  will-change: opacity, transform;
+}
