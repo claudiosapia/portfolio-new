@@ -14,88 +14,34 @@
     />
     <meta name="author" content="Claudio Sapia" />
     <meta name="robots" content="index, follow" />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Claudio Sapia" />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://claudiosapia.com/portfolio.html" />
+    <meta property="og:title" content="Claudio's Web Development Projects - Portfolio" />
+    <meta property="og:description" content="Explore Claudio's portfolio of web development projects." />
+    <meta property="og:image" content="https://claudiosapia.com/pics/claudio-logo.webp" />
+    <meta property="og:site_name" content="Claudio Sapia" />
+    <meta property="og:locale" content="en_UK" />
+  
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@web_dev_Claudio" />
     <meta name="twitter:creator" content="@web_dev_Claudio" />
-    <meta
-      property="og:url"
-      content="https://devclaudio.netlify.app/portfolio.html"
-    />
-    <meta property="og:type" content="website" />
+  
+    <link rel="shortcut icon" href="./pics/c-favicon.webp" />
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <meta
-      property="og:title"
-      content="Claudio's Web Development Projects - Portfolio"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://claudiosapia.com/portfolio.html" />
-    <meta
-      property="og:image"
-      content="https://claudiosapia.com/pics/claudio-logo.webp"
-    />
-    <meta
-      property="og:description"
-      content="Explore Claudio's portfolio of web development projects."
-    />
-    <meta property="og:site_name" content="Claudio Sapia" />
-    <meta property="og:locale" content="en_UK" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:type" content="image/png" />
-    <meta
-      property="og:image:alt"
-      content="Claudio's Web Development Projects - Portfolio"
-    />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="./styles/styles.css" />
-    <!-- Preload font asynchronously -->
-    <link
-      rel="preload"
-      href="./styles/LEMONMILK-Regular.otf"
-      as="font"
-      type="font/opentype"
-      crossorigin="anonymous"
-    />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://kit.fontawesome.com/e953136701.js"
-      crossorigin="anonymous"
-      defer
-    ></script>
+  
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat&display=swap"
       rel="stylesheet"
     />
-    <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="./pics/c-favicon.webp" />
-
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-FRPH4WBRG5"
-    ></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FRPH4WBRG5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -108,18 +54,27 @@
 
   <body class="portfolio-page">
    <!-- Navigation -->
-   <nav class="navbar">
+   <nav class="navbar navbar-expand-lg">
     <div class="nav-container">
-      <a href="/" class="logo">
-        <i class="fas fa-code"></i>
-        Claudio 
+      <a href="/" class="logo-nav">
+        <img src="./pics/logo.png" alt="Logo" srcset="" />
       </a>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="#proj">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="mobile-menu">
+      
+      <div class="collapse navbar-collapse" id="mobileNav">
+  
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="#proj">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+  
+      <button
+        class="mobile-menu navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mobileNav"
+      >
         <i class="fas fa-bars"></i>
       </button>
     </div>
@@ -858,26 +813,11 @@
       </div>
     </div>
   </section>
-    <!-- jQuery -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      defer
-    ></script>
-    <!-- Bootstrap JavaScript bundle -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-      defer
-    ></script>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
-      integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
-      crossorigin="anonymous"
-      defer
-    ></script>
-    <script  src="./js/portfolio.js"></script>
-    <script  src="./js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" defer></script>
+    <script src="./js/portfolio.js"></script>
+    <script src="js/index.js" defer></script>
+  </body>
   </body>
 </html>

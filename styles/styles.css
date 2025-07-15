@@ -96,126 +96,101 @@ p {
   margin: 0 auto;
   padding: 0 2rem;
 }
-
-/* ---  Navbar --- */
+/* ==========================================================================
+   2. Navbar
+   ========================================================================== */
 
 .navbar {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  background: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(10px) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-  z-index: 1000 !important;
-  padding: 0 !important;
-  transition: all 0.3s ease !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
-  border: none !important;
-  border-radius: 0 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: none;
 }
 
 .nav-container {
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  padding: 1rem 2rem !important;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
 }
 
-.navbar .logo {
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.5rem !important;
-  font-size: 1.5rem !important;
-  font-weight: 700 !important;
-  color: #2d3748 !important;
-  text-decoration: none !important;
-  transition: color 0.3s ease !important;
-  font-family: "Inter", sans-serif !important;
+.navbar .logo-nav {
+  display: flex;
+  align-items: center;
+  color: #2d3748;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.navbar .logo:hover {
-  color: #667eea !important;
-  text-decoration: none !important;
+.navbar .logo-nav:hover {
+  color: var(--primary);
+  text-decoration: none;
 }
 
-.navbar .logo i {
-  color: #667eea !important;
+.navbar .logo-nav img {
+  height: 40px; /* Using a fixed px value is often more reliable than vh */
+  margin-right: 0.5rem;
 }
 
 .navbar .nav-links {
-  display: flex !important;
-  list-style: none !important;
-  gap: 2rem !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-.navbar .nav-links li {
-  margin: 0 !important;
-  padding: 0 !important;
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar .nav-links a {
-  color: #4a5568 !important;
-  text-decoration: none !important;
-  font-weight: 500 !important;
-  font-size: 1rem !important;
-  transition: color 0.3s ease !important;
-  padding: 0.5rem 0 !important;
-  font-family: "Inter", sans-serif !important;
-  border: none !important;
-  background: none !important;
-  box-shadow: none !important;
+  color: #4a5568;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem; /* Slightly reduced for better fit */
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+  font-family: "Inter", sans-serif;
 }
 
 .navbar .nav-links a:hover {
-  color: #667eea !important;
-  text-decoration: none !important;
-  background: none !important;
+  color: var(--primary);
 }
 
-.navbar .mobile-menu {
-  display: none !important;
-  background: none !important;
-  border: none !important;
-  font-size: 1.5rem !important;
-  color: #4a5568 !important;
-  cursor: pointer !important;
-  padding: 0.5rem !important;
-  box-shadow: none !important;
+.navbar .navbar-toggler {
+  border: none;
+  font-size: 1.5rem;
+  color: #4a5568;
+  padding: 0.25rem 0.75rem;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
+.navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-collapse {
+  /* Aligns links to the right on desktop */
+  justify-content: flex-end;
+}
+
+/* Styles for when the menu is toggled open on mobile */
+@media (max-width: 991.98px) {
   .navbar .nav-links {
-    display: none !important;
+    /* Stack links vertically */
+    flex-direction: column;
+    /* Center-align the text */
+    align-items: center;
+    /* Add space above and below the links */
+    padding: 2rem 0;
+    gap: 1.5rem;
   }
-
-  .navbar .mobile-menu {
-    display: block !important;
-  }
-
-  .nav-container {
-    padding: 1rem !important;
-  }
-}
-
-.navbar button {
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-
-.navbar button:focus {
-  box-shadow: none !important;
-  outline: none !important;
 }
 
 .home-page .hero-title {
@@ -261,7 +236,11 @@ p {
   font-size: 1.5rem;
   cursor: pointer;
 }
-
+/* In your custom CSS file */
+.navbar-collapse {
+  /* This ensures your links are pushed to the end of the navbar */
+  justify-content: flex-end;
+}
 /* --- Hero Section --- */
 /* --- Hero Section with Two Connecting Images --- */
 .home-page .hero {
@@ -670,13 +649,22 @@ p {
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.95) !important;
     flex-direction: column;
     padding: 1rem;
     box-shadow: var(--shadow-lg);
   }
   .home-page .about-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar .nav-links {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 1.5rem;
   }
 }
 

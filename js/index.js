@@ -70,18 +70,6 @@ document.querySelectorAll(".fade-in").forEach((el) => {
 });
 
 // Navbar scroll effect
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
-  if (navbar) {
-    if (window.scrollY > 50) {
-      navbar.style.background = "rgba(255, 255, 255, 0.95)";
-      navbar.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.1)";
-    } else {
-      navbar.style.background = "rgba(255, 255, 255, 0.9)";
-      navbar.style.boxShadow = "none";
-    }
-  }
-});
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -96,38 +84,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
-
-// Navbar scroll effect
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 50) {
-    navbar.style.background = "rgba(255, 255, 255, 0.95)";
-    navbar.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.1)";
-  } else {
-    navbar.style.background = "rgba(255, 255, 255, 0.9)";
-    navbar.style.boxShadow = "none";
-  }
-});
-
-// Mobile menu toggle
-const mobileMenu = document.querySelector(".mobile-menu");
-const navLinks = document.querySelector(".nav-links");
-
-mobileMenu.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll(".nav-links a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("show");
-  });
-});
-
-// Typing effect for hero title
-const heroTitle = document.querySelector(".hero-title");
-const text = "Full Stack Developer";
-heroTitle.textContent = text; // Set the text immediately instead of typing effect
 
 // Subtle parallax effect for floating elements only
 window.addEventListener("scroll", () => {
@@ -154,11 +110,3 @@ function reveal() {
     }
   }
 }
-
-function init() {
-  showLoader();
-  window.addEventListener("load", function () {
-    hideLoader();
-  });
-}
-init();

@@ -19,47 +19,6 @@ window.addEventListener("scroll", reveal);
 // To check the scroll position on page load
 reveal();
 
-//LOADER
-
-const loader = document.getElementById("loader");
-const main = document.getElementById("main-section");
-
-function showLoader() {
-  // Display the loader element
-  if (loader) {
-    loader.style.display = "block";
-  }
-  // Hide the main content
-  if (main) {
-    main.style.opacity = 0;
-  }
-}
-
-function hideLoader() {
-  // Fade out the loader element
-  if (loader) {
-    loader.style.opacity = 0;
-    loader.style.display = "none";
-  }
-  // Fade in the main content
-  if (main) {
-    main.style.opacity = 1;
-  }
-}
-
-function init() {
-  // Show the loader when the page starts loading
-  showLoader();
-
-  window.addEventListener("load", function () {
-    // Hide the loader when the page finishes loading
-    hideLoader();
-  });
-}
-
-// Initialize the loader functionality
-init();
-
 // MODAL
 
 // --- MODAL PROJECT DATA STRUCTURE ---
