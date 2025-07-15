@@ -98,8 +98,6 @@ p {
 }
 
 /* ---  Navbar --- */
-/* Add this CSS to your portfolio.html in a <style> tag in the <head> section, 
-   AFTER Bootstrap CSS but BEFORE your main styles.css */
 
 .navbar {
   position: fixed !important;
@@ -588,7 +586,43 @@ p {
   transform: translateY(-5px);
   box-shadow: var(--shadow-xl);
 }
+/*
+  Call-to-Action Button Style
+*/
+.btn-more-projects {
+  /* Box Model & Sizing */
+  display: inline-block;
+  padding: 12px 28px;
 
+  /* Typography */
+  color: #ffffff;
+  font-size: 1rem; /* 16px */
+  font-weight: 700;
+  text-decoration: none; /* Removes the default link underline */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  /* Appearance */
+  background-color: #6346f4; /* Your primary brand color */
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+
+  /* Smooth transition for the hover effect */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.projects-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  text-align: center;
+}
+/* Hover State: What happens when you mouse over the button */
+.btn-more-projects:hover {
+  background-color: #5237d4; /* A slightly darker shade of your brand color */
+  transform: translateY(-2px); /* Makes the button "lift" slightly */
+}
 .home-page .portfolio-content {
   padding: 1.5rem;
 }
