@@ -273,7 +273,6 @@ p {
   color: white;
   position: relative;
   overflow: hidden;
-
   background:
       /* Layer 1: The gradient overlay (top) */ linear-gradient(
       135deg,
@@ -421,6 +420,7 @@ p {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
+/* Image Container */
 .home-page .portfolio-image {
   height: 200px;
   background: var(--gradient-2);
@@ -430,6 +430,14 @@ p {
   color: white;
   font-size: 3rem;
   border-radius: 15px 15px 0 0;
+  overflow: hidden;
+}
+.home-page .portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Prevents distortion */
+  display: block;
+  border-radius: inherit; /* Matches parent's rounding */
 }
 .home-page .portfolio-content {
   padding: 1.5rem;
@@ -577,17 +585,6 @@ p {
 .home-page .portfolio-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-xl);
-}
-
-.home-page .portfolio-image {
-  width: 100%;
-  height: 200px;
-  background: var(--gradient-2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 3rem;
 }
 
 .home-page .portfolio-content {
