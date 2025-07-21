@@ -439,14 +439,33 @@ p {
 .home-page .about-image:hover::before {
   transform: rotate(-3deg) scale(1.02);
 }
+@media (max-width: 1178px) {
+  .home-page .portfolio {
+    display: none !important;
+  }
+
+  .about-title,
+  .section-title {
+    font-size: 3.5em !important;
+  }
+}
 /* Large tablets and small desktops */
 @media (max-width: 1024px) {
   .about-grid {
     gap: clamp(2rem, 5vw, 4rem);
+    grid-template-columns: 1fr !important;
   }
   .about-img-wrapper,
   .about-image {
     display: none !important;
+  }
+
+  .hero-title {
+    font-size: 5em;
+  }
+  .hero-subtitle {
+    font-size: 2em;
+    padding-top: 1em;
   }
   .home-page .about,
   .home-page .skills,
@@ -779,6 +798,11 @@ p {
   box-shadow: var(--shadow-md);
 }
 
+@media screen and (max-width: 794px) {
+  .home-page .portfolio-card {
+    display: none;
+  }
+}
 /* ==========================================================================
        4. Responsive Media Queries
        ========================================================================== */
