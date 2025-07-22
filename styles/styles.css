@@ -41,6 +41,7 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
   overflow-x: hidden;
+  font-size: 1.3rem;
 }
 h2 {
   font-family: "Lemon Milk", sans-serif;
@@ -165,7 +166,7 @@ p {
 }
 
 .navbar .logo-nav img {
-  height: clamp(35px, 5vw, 45px);
+  height: clamp(64px, 5vw, 45px);
   width: auto;
   margin-right: 0.5rem;
 }
@@ -294,7 +295,8 @@ p {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-size: clamp(4rem, 10vw, 5rem);
+
   font-weight: 700;
   margin-bottom: clamp(1rem, 3vw, 2rem);
   background: linear-gradient(45deg, #ffffff, #e0e7ff);
@@ -306,7 +308,7 @@ p {
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-size: clamp(1.5rem, 3vw, 1.25rem);
   margin-bottom: clamp(2rem, 4vw, 3rem);
   opacity: 0.9;
   animation: fadeInUp 1s ease-out 0.2s both;
@@ -443,7 +445,33 @@ p {
 /* Large tablets and small desktops */
 @media (max-width: 1024px) {
   .about-grid {
-    gap: clamp(2rem, 5vw, 4rem);
+    display: flex !important;
+  }
+
+  p {
+    font-size: 1.8rem;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  .hero-content {
+    padding: 0 2rem;
+  }
+  .about-title,
+  .section-title {
+    font-size: 3rem !important;
+  }
+
+  .cta-button,
+  .header-cta-button,
+  .btn-more-projects {
+    padding: 1rem 2.5rem;
+    font-size: 1.5rem !important;
   }
   .about-img-wrapper,
   .about-image {
@@ -529,11 +557,11 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  text-align: center;
 }
-.home-page .skill-card,
-.home-page .portfolio-card {
+.home-page .skill-card {
   background: white;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 15px;
   box-shadow: var(--shadow-md);
   text-align: center;
@@ -584,7 +612,19 @@ p {
   margin-top: 1.5em;
   animation: fadeInUp 1s ease-out 0.4s both;
 }
-
+.home-page .header-cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--gradient-2);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-lg);
+  margin-top: 1.5em;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
 .home-page .cta-button:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-xl);
@@ -682,7 +722,7 @@ p {
 .home-page .section-title {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
   background: var(--gradient-1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -750,9 +790,6 @@ p {
 .btn-more-projects:hover {
   background-color: #5237d4; /* A slightly darker shade of your brand color */
   transform: translateY(-2px); /* Makes the button "lift" slightly */
-}
-.home-page .portfolio-content {
-  padding: 1.5rem;
 }
 
 .home-page .portfolio-content h3 {
@@ -1440,7 +1477,7 @@ p {
   color: var(--text-secondary);
   font-size: 1.1rem;
   line-height: 1.6;
-  text-align: center;
+
   margin-bottom: 3rem;
 }
 .portfolio-page .previous-projects-section .card {
