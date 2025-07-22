@@ -463,7 +463,8 @@ p {
     padding: 0 2rem;
   }
   .about-title,
-  .section-title {
+  .section-title,
+  #proj {
     font-size: 3rem !important;
   }
 
